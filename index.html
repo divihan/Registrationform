@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In and Sign Up Form </title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <h1 id="title">Sign Up</h1>
+                <form>
+                    <div class="input-group">
+                        <div class="input-field" id="nameField">
+                            <input type="text" placeholder="Name">
+                        </div>
+
+                        <div class="input-field">
+                            <input type="email" placeholder="Email">
+                        </div>
+
+                        <div class="input-field">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <p>Forgot password? <a href="#">Click Here!</a></p>
+                    </div>
+                    <div class="btn-field">
+                        <button type="button" id="signupBtn">Sign up</button>
+                        <button type="button" id="signinBtn" class="disable">Sign in</button>
+
+                    </div>
+                    <div class="line"></div>
+                    <div class="btn-field1">
+                        <button type="button" id="signinwithfacebook">Sign In with Facebook</button>
+                    </div>
+                    <div class="btn-field2"> 
+                        <button type="button" id="signinwithgoogle" class="disable">Sign In with Google</button>
+                    </div>
+                </form>  
+            </div>
+        </div> 
+        <script>
+            let signupBtn = document.getElementById("signupBtn");
+            let signinBtn = document.getElementById("signinBtn");
+            let nameField = document.getElementById("nameField");
+            let title = document.getElementById("title");
+            let signinwithfacebookBtn = document.getElementById("signinwithfacebook");
+            let signinwithgoogleBtn = document.getElementById("signinwithgoogle");
+            
+            signinBtn.onclick = function(){
+                nameField.style.maxHeight = "0";
+                title.innerHTML = "Sign In";
+                signupBtn.classList.add("disable");
+                signinBtn.classList.remove("disable");
+            }
+
+            signupBtn.onclick = function(){
+                nameField.style.maxHeight = "60px";
+                title.innerHTML = "Sign Up";
+                signupBtn.classList.remove("disable");
+                signinBtn.classList.add("disable");
+            }
+
+            signinwithfacebookBtn.onclick = function(){
+                nameField.style.maxHeight = "60px";
+                title.innerHTML = "Sign In";
+                signinwithfacebookBtn.classList.add("disable");
+                signinwithgoogleBtn.classList.remove("disable");
+            }
+            signinwithgoogleBtn.onclick = function(){
+                nameField.style.maxHeight = "60px";
+                title.innerHTML = "Sign In";
+                signinwithfacebookBtn.classList.remove("disable");
+                signinwithgoogleBtn.classList.add("disable");
+            }
+        </script> 
+    </body>
+</html>
